@@ -1,21 +1,33 @@
-if (!localStorage.getItem('userLoggedIn')) {
-    localStorage.setItem('userLoggedIn', JSON.stringify({ email: 'usuario@exemplo.com', password: 'senha123' }));
-}
+document.querySelector("#loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+    const inputEmail = document.querySelector("#idEmail").value;
+    const inputSenha = document.querySelector("#idSenha").value;
+    const inputCpf = document.querySelector("#idCpf").value;
 
-    const userLoggedIn = JSON.parse(localStorage.getItem('userLoggedIn'));
+    const validEmail = "teste@teste.com";
+    const validSenha = "1234abcd";
+    const validCpf = "123.456.789-00";
 
-    if (email === userLoggedIn.email && password === userLoggedIn.password) {
-        window.location.href = './sucesso.html';
+    if (inputEmail === validEmail && inputSenha === validSenha && inputCpf === validCpf) {
+        localStorage.setItem("userLoggedIn", JSON.stringify({
+            email: inputEmail,
+            senha: inputSenha,
+            cpf: inputCpf
+        }));
+        window.location.href = "./sucesso.html";
     } else {
-        window.location.href = './erro.html';
+        document.querySelector("#error-message").style.display = "block";
     }
 });
 
 function logout() {
-    window.location.href = './logout.html';
+    const mensagemlogout = document.createElement('p');
+    mensagemlogout.textContent = 'Aguarde enquanto o logout é realizado, a seguir você será redirecionado à página de login...';
+    document.body.appendChild(mensagemlogout);
+
+    setTimeout(() => {
+        localStorage.removeItem('userLoggedIn');
+        window.location.href = '../login.html';
+    }, 5000);
 }
