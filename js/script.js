@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     senha: inputSenha,
                     cpf: inputCpf
                 }));
-                window.location.href = "../sucesso.html";
+                window.location.href = "./sucesso.html";
             } else {
                 document.querySelector("#error-message").style.display = "block";
             }
@@ -39,10 +39,11 @@ document.addEventListener("DOMContentLoaded", function() {
         const btnLogout = document.getElementById("btnLogout");
         if (btnLogout) {
             btnLogout.addEventListener("click", function() {
-                window.location.href = "../logout.html";
+                localStorage.removeItem('userLoggedIn');
+                window.location.href = './logout.html';        
             });
         }
     } else if (document.body.contains(document.getElementById("btnLogout"))) {
-        window.location.href = "../login.html";
+        window.location.href = "./login.html";
     }
 });
