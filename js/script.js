@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 localStorage.setItem("userLoggedIn", JSON.stringify(validUser));
                 window.location.href = "../sucesso.html";
             } else {
-                document.querySelector("#error-message").style.display = "block";
+                window.location.href = "../erro.html"; // Redireciona para a página de erro
             }
         });
     }
