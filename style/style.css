@@ -76,3 +76,36 @@ button{
 button:hover{
     background-color: #A3965D;
 }
+
+#btnLogout {
+    position: relative;
+    top: 250px;
+    right: 10px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#user-data {
+    list-style-type: none;
+    padding: 0;
+    font: bold;
+}
+
+#user-data li {
+    font-size: 20px;
+    margin-bottom: 5px;
+    font: bold;
+}
