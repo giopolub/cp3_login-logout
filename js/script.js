@@ -10,16 +10,15 @@ document.addEventListener("DOMContentLoaded", function() {
             const inputSenha = document.querySelector("#idSenha").value;
             const inputCpf = document.querySelector("#idCpf").value;
 
-            const validEmail = "joaosilva@fiap.com";
-            const validSenha = "fiap123";
-            const validCpf = "123.456.789-00";
+            const validUsers = [
+                { email: "joaosilva@fiap.com", senha: "fiap123", cpf: "123.456.789-00", nome: "João da Silva" },
+                { email: "alexandrejesus@fiap.com", senha: "senha123", cpf: "111.222.333-44", nome: "Alexandre Jesus" }
+            ];
 
-            if (inputEmail === validEmail && inputSenha === validSenha && inputCpf === validCpf) {
-                localStorage.setItem("userLoggedIn", JSON.stringify({
-                    email: inputEmail,
-                    senha: inputSenha,
-                    cpf: inputCpf
-                }));
+            const validUser = validUsers.find(user => user.email === inputEmail && user.senha === inputSenha && user.cpf === inputCpf);
+
+            if (validUser) {
+                localStorage.setItem("userLoggedIn", JSON.stringify(validUser));
                 window.location.href = "./sucesso.html";
             } else {
                 document.querySelector("#error-message").style.display = "block";
@@ -33,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (userEmailElement && userNameElement) {
             userEmailElement.textContent = userLoggedIn.email;
-            userNameElement.textContent = "João da Silva";
+            userNameElement.textContent = userLoggedIn.nome;
         }
 
         const btnLogout = document.getElementById("btnLogout");
