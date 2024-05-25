@@ -19,7 +19,6 @@ body{
 
 h2{
     margin: 0 0 10px;
-    text-align: center;
 }
 
 .succes {
@@ -30,6 +29,18 @@ h2{
 .error{
     border: 1px solid #E7976B;
     background-color: #f10b0b;
+}
+
+.error-message{
+    color: #f80404;
+    display: none;
+    border: 1px solid #f80404;
+    background-color: #ffe6e6;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .form-group{
