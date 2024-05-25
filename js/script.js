@@ -15,3 +15,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         window.location.href = './erro.html';
     }
 });
+
+function logout() {
+    window.location.href = './logout.html';
+}

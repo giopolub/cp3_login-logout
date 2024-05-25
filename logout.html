@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Realizado</title>
+    <title>Logout</title>
     <link rel="stylesheet" href="./style/style.css">
     <script>
         setTimeout(() => {
-            window.location.href ='./index.html';
+            localStorage.removeItem('userLoggedIn');
+            window.location.href = './login.html';        
         }, 5000);
     </script>
 </head>
 <body>
-    <div class="message-container success">
-        <h2>Login Realizado com Sucesso!</h2>
-        <p>Aguarde enquanto você é redirecionado.</p>
+    <div class="message-container warning">
+        <h2>Aguarde enquanto o logout é realizado...</h2>
+        <p>Você será redirecionado para a página de login.</p>
     </div>
 </body>
 </html>
