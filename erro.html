@@ -1,11 +1,20 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dados Incorretos</title>
+    <title>Erro no Login</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <script>
+        setTimeout(() => {
+            window.location.href = './login.html';
+        }, 5000); // Aguarde 5 segundos antes de redirecionar para login.html
+    </script>
 </head>
 <body>
-    
+    <div class="message-container error">
+        <h2>Email ou senha incorretos!</h2>
+        <p>Para acessar o sistema, tente novamente.</p>
+    </div>
 </body>
 </html>
