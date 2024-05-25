@@ -29,11 +29,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (userLoggedIn) {
         const userEmailElement = document.getElementById("user-email");
-        const userNameElement = document.getElementById("username");
+        const userNameElement = document.getElementById("user-name");
 
         if (userEmailElement && userNameElement) {
             userEmailElement.textContent = userLoggedIn.email;
-            userNameElement.textContent = userLoggedIn.email.split('@')[0];
+            userNameElement.textContent = "João da Silva";
         }
 
         const btnLogout = document.getElementById("btnLogout");
