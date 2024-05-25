@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", function() {
             const inputSenha = document.querySelector("#idSenha").value;
             const inputCpf = document.querySelector("#idCpf").value;
 
-            const validEmail = "teste@teste.com";
-            const validSenha = "1234abcd";
+            const validEmail = "joaosilva@fiap.com";
+            const validSenha = "fiap123";
             const validCpf = "123.456.789-00";
 
             if (inputEmail === validEmail && inputSenha === validSenha && inputCpf === validCpf) {
